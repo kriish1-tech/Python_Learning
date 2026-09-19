@@ -33,4 +33,4 @@ print("==========")
 print(f'''Percentage: {percentage}%
 Grade: {grade}''')
 
-print(student)
+print("Thank you for using the Grade Calculator!")
