@@ -1,30 +1,31 @@
 print("Welcome to the Simple Calculator!")
 
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
+operations = ("+", "-", "*", "/", "exit")
 
-print("""
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division""")
+while True:
+    user_input = input("Enter an operation (+, -, *, /) or 'exit' to quit: ")
 
-operation = int(input("Choose an operation (1-4): "))
+    if user_input == "exit":
+        print("Exiting the calculator. Goodbye!")
+        break
+    elif user_input in operations:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
 
-if operation == 1:
-    result = num1 + num2
-    print(f"The result of addition is: {result}")
-elif operation == 2:
-    result = num1 - num2
-    print(f"The result of subtraction is: {result}")
-elif operation == 3:
-    result = num1 * num2
-    print(f"The result of multiplication is: {result}")
-elif operation == 4:
-    if num2 != 0:
-        result = num1 / num2
-        print(f"The result of division is: {result}")
+        if user_input == "+":
+            result = num1 + num2
+            print(f"The result of addition is: {result}")
+        elif user_input == "-":
+            result = num1 - num2
+            print(f"The result of subtraction is: {result}")
+        elif user_input == "*":
+            result = num1 * num2
+            print(f"The result of multiplication is: {result}")
+        elif user_input == "/":
+            if num2 != 0:
+                result = num1 / num2
+                print(f"The result of division is: {result}")
+            else:
+                print("Error: Division by zero is not allowed.")
     else:
-        print("Error: Division by zero is not allowed.")
-else:
-    print("Invalid operation selected. Please choose an option between 1 and 4.")
+        print("Invalid operation selected. Please choose a valid operation (+, -, *, /) or 'exit' to quit.")
